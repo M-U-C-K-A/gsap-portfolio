@@ -207,19 +207,19 @@ h1 {
 #element h2 {
   width: 30%;
 }
-#element .studio-description {
+#element .freelance-description {
   width: 40%;
 }
-#element .studio-description p {
+#element .freelance-description p {
   font-size: clamp(1.2rem, 1.16rem + 0.19vw, 1.35em);
 }
-#element .studio-description .contact-link {
+#element .freelance-description .contact-link {
   color: #e5e5dc;
   text-decoration: none;
   display: inline-block;
   margin-top: 15px;
 }
-#element .studio-description .contact-link span {
+#element .freelance-description .contact-link span {
   background-color: #e5e5dc;
   color: #1b1c1d;
   border-radius: 6px;
@@ -347,21 +347,24 @@ li {
 }
 #services .slider .data {
   height: 100vh;
-  width: 100%;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 #services .slider .data .inner {
   margin: 7em;
   position: relative;
   display: flex;
   height: calc(100% - 14em);
-  align-items: end;
+  align-items: center;
   justify-content: center;
   width: 100vw;
 }
-#services .slider .data .inner .highlighted-content {
+#services .slider .data .inner.animate-section {
   color: #1b1c1d;
 }
-#services .slider .data .inner .highlighted-content .purple-heading {
+#services .slider .data .inner.animate-section .purple-heading {
   max-width: -moz-fit-content;
   max-width: fit-content;
   background-color: #fec5fb;
@@ -369,7 +372,7 @@ li {
   padding: 1.48148vh 2.03704vh 1.11111vh;
   transform: translate(-20px, -15px);
 }
-#services .slider .data .inner .highlighted-content .orange-heading {
+#services .slider .data .inner.animate-section .orange-heading {
   max-width: -moz-fit-content;
   max-width: fit-content;
   background-color: #ff8709;
@@ -378,15 +381,24 @@ li {
   padding: 1.48148vh 2.03704vh 1.11111vh;
 }
 #services .slider .data .inner.skills-section {
-  display: grid;
-  background-color: red;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
-  max-width: 800px;
-  grid-auto-rows: minmax(100px, auto);
+  gap: 25px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 #services .slider .data .inner.skills-section img {
-  width: 80px;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 42px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  align-items: center;
+  border-radius: 0.25rem;
+  border-width: 1px;
+}
+#services .slider .data .inner.skills-section img:hover {
+  opacity: 0.4;
 }
 #services .slider .data .inner.profile-section {
   display: flex;
@@ -407,7 +419,7 @@ footer {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-top: 15px;
+  margin-top: 35px;
   padding: 20px 10%;
   border-bottom: 2px solid #ff873c;
 }

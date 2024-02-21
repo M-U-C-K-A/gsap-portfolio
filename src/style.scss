@@ -201,7 +201,7 @@ h1 {
     h2 {
         width: 30%;
     }
-    .studio-description {
+    .freelance-description {
         width: 40%;
         p {
             font-size: clamp(1.2rem, calc(1.16rem + 0.19vw), 1.35em);
@@ -332,17 +332,20 @@ li {
         display: flex;
         .data {
             height: 100vh;
-            width: 100%;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             .inner {
                 margin: 7em;
                 position: relative;
                 display: flex;
                 height: calc(100% - 14em);
-                align-items: end;
+                align-items: center;
                 justify-content: center;
                 width: 100vw;
 
-                .highlighted-content {
+                &.animate-section {
                     color: #1b1c1d;
                     .purple-heading {
                         max-width: fit-content;
@@ -360,14 +363,20 @@ li {
                     }
                 }
                 &.skills-section {
-                    display: grid;
-                    background-color: red;
-                    grid-template-columns: repeat(3, 1fr);
-                    grid-gap: 10px;
-                    max-width: 800px;
-                    grid-auto-rows: minmax(100px, auto);
+                    gap: 25px;
+                    flex-wrap: wrap;
+                    max-width: 1200px;
+                    height: fit-content;
                     img {
-                        width: 80px;
+                        width: fit-content;
+                        height: 42px;
+                        object-fit: contain;
+                        align-items: center;
+                        border-radius: 0.25rem;
+                        border-width: 1px;
+                        &:hover {
+                            opacity: .4;
+                        }
                     }
                 }
                 &.profile-section {
@@ -392,7 +401,7 @@ footer {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-top: 15px;
+    margin-top: 35px;
     padding: 20px 10%;
     border-bottom: 2px solid #ff873c;
     .contact {
